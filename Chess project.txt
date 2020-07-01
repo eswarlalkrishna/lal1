@@ -1,0 +1,242 @@
+HTML
+
+<document>
+<div class="chessboard">
+  <div class="d11">81</div>
+  <div class="d12">82</div>
+  <div class="d13">83</div>
+  <div class="d14">84</div>
+  <div class="d15">85</div>
+  <div class="d16">86</div>
+  <div class="d17">87</div>
+  <div class="d18">88</div>
+  <div class="d21">71</div>
+  <div class="d22">72</div>
+  <div class="d23">73</div>
+  <div class="d24">74</div>
+  <div class="d25">75</div>
+  <div class="d26">76</div>
+  <div class="d27">77</div>
+  <div class="d28">78</div>
+  <div class="d31">61</div>
+  <div class="d32">62</div>
+  <div class="d33">63</div>
+  <div class="d34">64</div>
+  <div class="d35">65</div>
+  <div class="d36">66</div>
+  <div class="d37">67</div>
+  <div class="d38">68</div>
+  <div class="d41">51</div>
+  <div class="d42">52</div>
+  <div class="d43">53</div>
+  <div class="d44">54</div>
+  <div class="d45">55</div>
+  <div class="d46">56</div>
+  <div class="d47">57</div>
+  <div class="d48">58</div>
+  <div class="d51">41</div>
+  <div class="d52">42</div>
+  <div class="d53">43</div>
+  <div class="d54">44</div>
+  <div class="d55">45</div>
+  <div class="d56">46</div>
+  <div class="d57">47</div>
+  <div class="d58">48</div>
+  <div class="d61">31</div>
+  <div class="d62">32</div>
+  <div class="d63">33</div>
+  <div class="d64">34</div>
+  <div class="d65">35</div>
+  <div class="d66">36</div>
+  <div class="d67">37</div>
+  <div class="d68">38</div>
+  <div class="d71">21</div>
+  <div class="d72">22</div>
+  <div class="d73">23</div>
+  <div class="d74">24</div>
+  <div class="d75">25</div>
+  <div class="d76">26</div>
+  <div class="d77">27</div>
+  <div class="d78">28</div>
+  <div class="d81">11</div>
+  <div class="d82">12</div>
+  <div class="d83">13</div>
+  <div class="d84">14</div>
+  <div class="d85">15</div>
+  <div class="d86">16</div>
+  <div class="d87">17</div>
+  <div class="d88">18</div>
+  </div>
+<div class="queen" id="q1">Q</div>
+<p> Click on the button to give input</p>
+<button onclick="myFunction()">Output</button>
+<p id="demo"></p>
+
+CSS
+
+  .d11{background:lightgray;}
+  .d12{background:white;}
+  .d13{background:lightgray;}
+  .d14{background:white;}
+  .d15{background:lightgray;}
+  .d16{background:white;}
+  .d17{background:lightgray;}
+  .d18{background:white;}
+  .d21{background:white;}
+  .d22{background:lightgray;}
+  .d23{background:white;}
+  .d24{background:lightgray;}
+  .d25{background:white;}
+  .d26{background:lightgray;}
+  .d27{background:white;}
+  .d28{background:lightgray;}
+  .d31{background:lightgray;}
+  .d32{background:white;}
+  .d33{background:lightgray;}
+  .d34{background:white;}
+  .d35{background:lightgray;}
+  .d36{background:white;}
+  .d37{background:lightgray;}
+  .d38{background:white;}
+  .d41{background:white;}
+  .d42{background:lightgray;}
+  .d43{background:white;}
+  .d44{background:lightgray;}
+  .d45{background:white;}
+  .d46{background:lightgray;}
+  .d47{background:white;}
+  .d48{background:lightgray;}
+  .d51{background:lightgray;}
+  .d52{background:white;}
+  .d53{background:lightgray;}
+  .d54{background:white;}
+  .d55{background:lightgray;}
+  .d56{background:white;}
+  .d57{background:lightgray;}
+  .d58{background:white;}
+  .d61{background:white;}
+  .d62{background:lightgray;}
+  .d63{background:white;}
+  .d64{background:lightgray;}
+  .d65{background:white;}
+  .d66{background:lightgray;}
+  .d67{background:white;}
+  .d68{background:lightgray;}
+  .d71{background:lightgray;}
+  .d72{background:white;}
+  .d73{background:lightgray;}
+  .d74{background:white;}
+  .d75{background:lightgray;}
+  .d76{background:white;}
+  .d77{background:lightgray;}
+  .d78{background:white;}
+  .d81{background:white;}
+  .d82{background:lightgray;}
+  .d83{background:white;}
+  .d84{background:lightgray;}
+  .d85{background:white;}
+  .d86{background:lightgray;}
+  .d87{background:white;}
+  .d88{background:lightgray;}
+  .chessboard {
+    font-size: 20px;
+    width: 18%;
+    background: Gray;
+    display: grid;
+    grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px;
+    color: red;
+    grid-template-columns: 30px 30px 30px 30px 30px 30px 30px 30px;
+    text-align: center;
+}
+
+.queen{
+  border-radius: 50%;
+  color: red;
+  position: relative;
+  background-color: black;
+  width:20px;
+  height: 20px;
+  //margin-left: 96px;
+}
+.queen{
+  move();
+}
+
+Javascript
+
+function myFunction() {
+  var rowpos = prompt("Enter Initial Position of Queen in row", "Ex: a or b or c or d....f");
+  var j;
+  switch(rowpos)
+  {
+  	case 'a': j = parseInt("0"); break;
+  	case 'b': j = parseInt("1"); break;
+  	case 'c': j = parseInt("2"); break;
+  	case 'd': j = parseInt("3"); break;
+  	case 'e': j = parseInt("4"); break;
+  	case 'f': j = parseInt("5"); break;
+  	case 'g': j = parseInt("6"); break;
+  	case 'h': j = parseInt("7"); break;
+  }
+  var i = prompt("Enter Initial Position of Queen in column", "Ex: 1,2,3,4,5,6,7,8");
+   i = parseInt(i) - 1;
+  var north = prompt("Enter steps to move in North Direction Position", "Ex: 1/2/3/4");
+  var south = prompt("Enter steps to move in South Direction Position", "Ex: 1/2/3/4");
+  var east = prompt("Enter steps to move in East Direction Position", "Ex: 1/2/3/4");
+  var west = prompt("Enter steps to move in West Direction Position", "Ex: 1/2/3/4");
+  
+  i = i - parseInt(north);
+  if(i < 0)
+  {
+  	document.getElementById("demo").innerHTML =
+    "Queen Moved out of bound";
+  }
+  else
+  {
+  	i = i + parseInt(south);
+  	if(i > 7)
+  	{
+  		document.getElementById("demo").innerHTML =
+    		"Queen Moved out of bound";
+  	}
+  	else
+  	{
+  		j = j + parseInt(east);
+  		if(j>7)
+  		{
+  			document.getElementById("demo").innerHTML =
+    		"Queen Moved out of bound";
+  		}
+  		else
+  		{
+  			j = j - parseInt(west);
+  			if(j < 0)
+  			{
+  				document.getElementById("demo").innerHTML =
+    		"Queen Moved out of bound";
+  			}
+  			else
+  			{
+  				i = i + 1;
+  				 switch(j)
+				  {
+				  	case 0: j = 'a'; break;
+				  	case 1: j = 'b'; break;
+				  	case 2: j = 'c'; break;
+				  	case 3: j = 'd'; break;
+				  	case 4: j = 'e'; break;
+				  	case 5: j = 'f'; break;
+				  	case 6: j = 'g'; break;
+				  	case 7: j = 'h'; break;
+				  }
+
+  				document.getElementById("demo").innerHTML =
+    		"The Queen is in the position "+j+""+i;
+  			}
+  		}
+  	}
+  }
+
+
+
+}
